@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { aunthenticateUser } = require("../app/middlewares/authentication");
+const { authenticateUser } = require("../app/middlewares/authentication");
 
 const usersController = require("../app/controllers/usersController");
 const customersController = require("../app/controllers/customersController");
@@ -11,40 +11,40 @@ const ticketsController = require("../app/controllers/ticketsController");
 
 router.post("/users/registration", usersController.register);
 router.post("/users/login", usersController.login);
-router.get("/users/account", aunthenticateUser, usersController.account);
-router.delete("/users/logout", aunthenticateUser, usersController.logout);
+router.get("/users/account", authenticateUser, usersController.account);
+router.delete("/users/logout", authenticateUser, usersController.logout);
 
-router.get("/customers", aunthenticateUser, customersController.list);
-router.get("/customers/:id", aunthenticateUser, customersController.show);
-router.post("/customers", aunthenticateUser, customersController.create);
-router.put("/customers/:id", aunthenticateUser, customersController.update);
-router.delete("/customers/:id", aunthenticateUser, customersController.delete);
+router.get("/customers", authenticateUser, customersController.list);
+router.get("/customers/:id", authenticateUser, customersController.show);
+router.post("/customers", authenticateUser, customersController.create);
+router.put("/customers/:id", authenticateUser, customersController.update);
+router.delete("/customers/:id", authenticateUser, customersController.delete);
 
-router.get("/departments", aunthenticateUser, departmentsController.list);
-router.get("/departments/:id", aunthenticateUser, departmentsController.show);
-router.post("/departments", aunthenticateUser, departmentsController.create);
-router.put("/departments/:id", aunthenticateUser, departmentsController.update);
+router.get("/departments", authenticateUser, departmentsController.list);
+router.get("/departments/:id", authenticateUser, departmentsController.show);
+router.post("/departments", authenticateUser, departmentsController.create);
+router.put("/departments/:id", authenticateUser, departmentsController.update);
 router.delete(
   "/departments/:id",
-  aunthenticateUser,
+  authenticateUser,
   departmentsController.delete
 );
 
-router.get("/employees", aunthenticateUser, employeesController.list);
-router.get("/employees/:id", aunthenticateUser, employeesController.show);
-router.post("/employees", aunthenticateUser, employeesController.create);
-router.put("/employees/:id", aunthenticateUser, employeesController.update);
-router.delete("/employees/:id", aunthenticateUser, employeesController.delete);
+router.get("/employees", authenticateUser, employeesController.list);
+router.get("/employees/:id", authenticateUser, employeesController.show);
+router.post("/employees", authenticateUser, employeesController.create);
+router.put("/employees/:id", authenticateUser, employeesController.update);
+router.delete("/employees/:id", authenticateUser, employeesController.delete);
 
-router.get("/tickets", aunthenticateUser, ticketsController.list);
-router.get("/tickets/:id", aunthenticateUser, ticketsController.show);
-router.post("/tickets", aunthenticateUser, ticketsController.create);
-router.put("/tickets/:id", aunthenticateUser, ticketsController.update);
+router.get("/tickets", authenticateUser, ticketsController.list);
+router.get("/tickets/:id", authenticateUser, ticketsController.show);
+router.post("/tickets", authenticateUser, ticketsController.create);
+router.put("/tickets/:id", authenticateUser, ticketsController.update);
 router.delete(
   "/tickets/soft_delete/:id",
-  aunthenticateUser,
+  authenticateUser,
   ticketsController.softDelete
 );
-router.delete("/tickets/:id", aunthenticateUser, ticketsController.delete);
+router.delete("/tickets/:id", authenticateUser, ticketsController.delete);
 
 module.exports = router;

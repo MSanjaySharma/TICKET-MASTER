@@ -1,6 +1,6 @@
 const User = require("../models/user");
 
-const aunthenticateUser = (req, res, next) => {
+const authenticateUser = (req, res, next) => {
   const token = req.header("x-auth");
   User.findByToken(token)
     .then((user) => {
@@ -18,5 +18,5 @@ const aunthenticateUser = (req, res, next) => {
 };
 
 module.exports = {
-  aunthenticateUser,
+  authenticateUser,
 };
