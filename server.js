@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const cors = require("cors");
 const helmet = require("helmet");
+const compression = require("compression");
 require("dotenv").config();
 
 const configureDB = require("./config/database");
@@ -18,6 +19,7 @@ configureDB();
 
 //middlewares
 app.use(helmet());
+app.use(compression());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
