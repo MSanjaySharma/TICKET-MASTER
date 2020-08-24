@@ -40,6 +40,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.listen(port, () => {
   console.log(
-    `\x1b[94mServer is running on port ${port}\x1b[39m\n\x1b[94mvisit\x1b[39m \x1b[96mhttp://localhost:7331/apiv1\x1b[39m`
+    `\x1b[94mServer is running on port ${port}\x1b[39m\n\x1b[94mvisit\x1b[39m \x1b[96mhttp://localhost:${port}/apiv1\x1b[39m`
   );
 });
