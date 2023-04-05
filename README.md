@@ -16,7 +16,9 @@ Ticket Master is a full-Stack, help-desk utility to register, track and analyse 
 
 ![TICKET MASTER DEMO](https://user-images.githubusercontent.com/68370514/88466533-fec1bc00-ceea-11ea-8066-3208464d56a1.gif)
 
-Open the [LIVE DEMO](https://ticket--master.herokuapp.com/) to try Ticket Master yourself.
+Open the [LIVE DEMO](https://ticket-master.onrender.com/) to try Ticket Master yourself.
+
+Disclaimer: There could be delay in responses due as the app is hosted on shared community servers (non-production grade servers).
 
 ---
 
