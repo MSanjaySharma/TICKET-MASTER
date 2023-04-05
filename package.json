@@ -22,7 +22,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "build:prod": "cd client && npm ci && npm run build"
   },
   "engines": {
     "node": "^10.3.0",
